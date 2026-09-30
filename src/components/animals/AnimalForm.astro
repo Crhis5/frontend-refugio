@@ -1,0 +1,17 @@
+﻿---
+const { animal } = Astro.props;
+const editing = Boolean(animal);
+---
+<form id="animal-form" data-mode={editing ? 'edit' : 'create'} data-id={animal?.identificador ?? ''} class="space-y-5 rounded-3xl bg-white p-6 shadow-soft sm:p-8">
+  <div class="grid gap-5 sm:grid-cols-2">
+    <label class="space-y-2 text-sm font-bold">Nombre<input class="field" name="nombre" required value={animal?.nombre ?? ''} placeholder="Ej. Max" /></label>
+    <label class="space-y-2 text-sm font-bold">Raza<input class="field" name="raza" required value={animal?.raza ?? ''} placeholder="Ej. Labrador" /></label>
+    <label class="space-y-2 text-sm font-bold">Edad<input class="field" name="edad" required min="0" type="number" value={animal?.edad ?? ''} placeholder="0" /></label>
+    <label class="space-y-2 text-sm font-bold">Sexo<select class="field" name="sexo" required><option value="">Selecciona</option><option selected={animal?.sexo === 'Hembra'}>Hembra</option><option selected={animal?.sexo === 'Macho'}>Macho</option></select></label>
+    <label class="space-y-2 text-sm font-bold sm:col-span-2">Tipo de animal<select class="field" name="tipoAnimal" required><option value="">Selecciona</option><option selected={animal?.tipoAnimal === 'Perro'}>Perro</option><option selected={animal?.tipoAnimal === 'Gato'}>Gato</option></select></label>
+  </div>
+  <p data-form-message class="hidden rounded-xl px-4 py-3 text-sm"></p>
+  <button class="button-primary w-full" type="submit">{editing ? 'Guardar cambios' : 'Registrar animal'}</button>
+</form>
+
+

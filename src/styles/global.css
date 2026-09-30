@@ -1,0 +1,25 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #FFF8ED; color: #321B1F; }
+
+@layer components {
+  .field {
+    @apply w-full rounded-xl border border-[rgba(100,31,43,0.15)] bg-white px-4 py-3 text-[#321B1F] outline-none transition placeholder:text-[rgba(50,27,31,0.4)] focus:border-[#8F2938] focus:ring-4 focus:ring-[rgba(248,213,104,0.3)];
+  }
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-[#F5C542] px-6 py-3 font-bold text-[#321B1F] shadow-sm transition hover:-translate-y-0.5 hover:bg-[#F8D568] focus:outline-none focus:ring-4 focus:ring-[rgba(248,213,104,0.4)];
+  }
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-[rgba(255,255,255,0.7)] px-6 py-3 font-bold text-white transition hover:bg-white hover:text-[#641F2B];
+  }
+}
+
+

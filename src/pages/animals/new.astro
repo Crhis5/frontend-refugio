@@ -1,0 +1,13 @@
+﻿---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import AnimalForm from '../../components/animals/AnimalForm.astro';
+---
+<MainLayout title="Registrar animal | Huellas" protectedPage><Header /><main class="min-h-screen bg-[#FFF8ED] px-6 pb-16 pt-28"><div class="mx-auto max-w-2xl"><a href="/animals" class="font-bold text-refuge-800">← Volver a animales</a><h1 class="mt-5 font-display text-5xl font-black text-refuge-950">Una nueva historia</h1><p class="mt-3 text-refuge-950/60">Registra la información del animal para comenzar a encontrarle hogar.</p><div class="mt-8"><AnimalForm /></div></div></main></MainLayout>
+<script>
+  import { animalSchema } from '../../schemas/animal.schema'; import { createAnimal } from '../../lib/api'; import { getToken } from '../../lib/storage';
+  const form = document.querySelector<HTMLFormElement>('#animal-form'); const message = document.querySelector<HTMLElement>('[data-form-message]'); if (!getToken()) window.location.href = '/login';
+  form?.addEventListener('submit', async (event) => { event.preventDefault(); const parsed = animalSchema.safeParse(Object.fromEntries(new FormData(form))); if (!parsed.success) { message!.textContent = parsed.error.issues[0].message; message!.className = 'rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700'; return; } try { await createAnimal(parsed.data); window.location.href = '/animals'; } catch (error) { message!.textContent = error instanceof Error ? error.message : 'No se pudo registrar'; message!.className = 'rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700'; } });
+</script>
+
+

@@ -1,0 +1,37 @@
+﻿---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import CreatorsSection from '../components/layout/CreatorsSection.astro';
+---
+<MainLayout title="Angelitos de Edgar | Refugio animal en Santa Cruz">
+  <main class="overflow-hidden bg-refuge-800">
+    <section class="relative mx-auto min-h-[680px] max-w-7xl px-6 pb-20 pt-36 lg:px-14">
+      <Header dark />
+      <div class="relative z-10 max-w-2xl text-white">
+        <p class="mb-5 inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-bold text-sun-400">Refugio animal · Santa Cruz de la Sierra</p>
+        <h1 class="font-display text-6xl font-black leading-[.9] tracking-tight sm:text-8xl">Angelitos<br />de Edgar</h1>
+        <p class="mt-7 max-w-xl text-lg leading-8 text-white/80">Un hogar temporal para animales rescatados en Santa Cruz. Rescatamos, cuidamos y buscamos familias responsables para perros y gatos que necesitan una segunda oportunidad.</p>
+        <div class="mt-9 flex flex-wrap gap-4"><a class="button-primary" href="/animals">Ver animales</a><a class="button-secondary" href="#apoyar">Apoya nuestra misión</a><a class="button-secondary" href="#historia">Conoce el refugio</a></div>
+      </div>
+      <div class="pointer-events-none absolute bottom-0 right-0 w-full max-w-2xl lg:w-3/5"><img src="/images/hero-pets.svg" alt="Ilustración de un perro y un gato" class="w-full" /><p class="absolute bottom-3 right-8 text-xs text-refuge-950/55">Ilustración provisional</p></div>
+    </section>
+
+    <section id="historia" class="bg-[#FFF8ED] px-6 py-20 text-refuge-950 lg:px-14">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+        <div><p class="font-bold text-refuge-800">Nuestra historia</p><h2 class="mt-3 font-display text-5xl font-black leading-tight">Una segunda oportunidad comienza con un rescate.</h2><p class="mt-6 max-w-2xl leading-8 text-refuge-950/65">Angelitos de Edgar nació a partir de la labor de <strong class="text-refuge-950">Édgar Ortega Carrizo</strong>, quien comenzó rescatando animales en situación de abandono. Con el tiempo, el proyecto creció hasta convertirse en una organización sin fines de lucro dedicada al rescate y cuidado de perros y gatos en Santa Cruz.</p><p class="mt-4 max-w-2xl leading-8 text-refuge-950/65">El refugio continúa buscando familias responsables y apoyo solidario para sostener la alimentación, atención y protección de sus animales.</p></div>
+        <div class="rounded-[2rem] bg-sun-500 p-8 shadow-soft"><p class="font-display text-3xl font-bold">Cada ayuda cuenta</p><p class="mt-4 leading-7 text-refuge-950/75">Puedes aportar con una adopción responsable, alimentos, medicamentos, abrigo, materiales, voluntariado o compartiendo sus publicaciones.</p><a href="#apoyar" class="mt-7 inline-flex font-bold text-refuge-950 underline decoration-2 underline-offset-4">Descubre cómo apoyar →</a></div>
+      </div>
+    </section>
+
+    <section class="bg-white px-6 py-20 text-refuge-950 lg:px-14"><div class="mx-auto max-w-7xl"><div class="max-w-2xl"><p class="font-bold text-refuge-800">Impacto reportado</p><h2 class="mt-3 font-display text-5xl font-black">Una labor que crece cada año.</h2><p class="mt-5 text-refuge-950/60">Las cifras corresponden a publicaciones y noticias de distintos años; no representan un conteo permanente del refugio.</p></div><div class="mt-12 grid gap-5 md:grid-cols-3"><article class="rounded-3xl bg-[#FFF8ED] p-7"><p class="text-sm font-bold text-refuge-800">2023</p><p class="mt-3 font-display text-5xl font-black">~130</p><p class="mt-3 leading-6 text-refuge-950/65">animales atendidos, entre aproximadamente 30 gatos y 100 perros.</p></article><article class="rounded-3xl bg-refuge-800 p-7 text-white"><p class="text-sm font-bold text-sun-400">2024</p><p class="mt-3 font-display text-5xl font-black">+300</p><p class="mt-3 leading-6 text-white/70">perros y gatos reportados en el refugio.</p></article><article class="rounded-3xl bg-sun-500 p-7"><p class="text-sm font-bold text-refuge-800">2025</p><p class="mt-3 font-display text-5xl font-black">+400</p><p class="mt-3 leading-6 text-refuge-950/70">animales presentados para adopción.</p></article></div></div></section>
+
+    <section id="apoyar" class="bg-[#FFF8ED] px-6 py-20 text-refuge-950 lg:px-14"><div class="mx-auto max-w-7xl"><div class="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p class="font-bold text-refuge-800">¿Cómo ayudar?</p><h2 class="mt-3 font-display text-5xl font-black">Tu apoyo se convierte en cuidado.</h2></div><a href="https://wa.me/59173107078?text=Hola%2C%20quiero%20apoyar%20a%20Angelitos%20de%20Edgar" target="_blank" rel="noreferrer" class="button-primary">Contactar por WhatsApp</a></div><div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"><div class="rounded-2xl bg-white p-6"><span class="text-2xl">🥣</span><h3 class="mt-4 font-bold">Donar alimentos</h3><p class="mt-2 text-sm leading-6 text-refuge-950/60">Apoya la alimentación diaria de perros y gatos.</p></div><div class="rounded-2xl bg-white p-6"><span class="text-2xl">💊</span><h3 class="mt-4 font-bold">Donar medicamentos</h3><p class="mt-2 text-sm leading-6 text-refuge-950/60">Contribuye a sus tratamientos y recuperación.</p></div><div class="rounded-2xl bg-white p-6"><span class="text-2xl">🧺</span><h3 class="mt-4 font-bold">Abrigo y materiales</h3><p class="mt-2 text-sm leading-6 text-refuge-950/60">Ayuda a mejorar sus espacios de cuidado.</p></div><div class="rounded-2xl bg-white p-6"><span class="text-2xl">🐾</span><h3 class="mt-4 font-bold">Adoptar responsablemente</h3><p class="mt-2 text-sm leading-6 text-refuge-950/60">Ofrece una familia para toda la vida.</p></div><div class="rounded-2xl bg-white p-6"><span class="text-2xl">🤝</span><h3 class="mt-4 font-bold">Ser voluntario</h3><p class="mt-2 text-sm leading-6 text-refuge-950/60">Suma tu tiempo y tus habilidades.</p></div><div class="rounded-2xl bg-white p-6"><span class="text-2xl">📣</span><h3 class="mt-4 font-bold">Compartir publicaciones</h3><p class="mt-2 text-sm leading-6 text-refuge-950/60">Ayuda a que cada animal llegue a su familia.</p></div></div></div></section>
+
+    <section class="bg-refuge-800 px-6 py-16 text-center text-white lg:px-14"><p class="font-bold text-sun-400">Contacto</p><h2 class="mx-auto mt-3 max-w-2xl font-display text-5xl font-black">¿Quieres ayudar a un angelito?</h2><p class="mx-auto mt-5 max-w-xl leading-7 text-white/70">Escríbenos al 73107078 para conocer las formas actuales de apoyo, adopción y voluntariado.</p><a class="button-primary mt-8" href="https://wa.me/59173107078" target="_blank" rel="noreferrer">WhatsApp: 73107078</a></section>
+    <CreatorsSection />
+    <Footer />
+  </main>
+</MainLayout>
+
+

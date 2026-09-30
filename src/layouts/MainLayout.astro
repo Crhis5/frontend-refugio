@@ -1,0 +1,19 @@
+﻿---
+import '../styles/global.css';
+interface Props { title?: string; protectedPage?: boolean; }
+const { title = 'Huellas que encuentran hogar', protectedPage = false } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content="Gestiona con cariño los animales de nuestro refugio." />
+  </head>
+  <body data-protected={protectedPage ? 'true' : 'false'}>
+    <slot />
+  </body>
+</html>
+
+

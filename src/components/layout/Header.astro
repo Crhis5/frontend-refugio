@@ -1,0 +1,33 @@
+﻿---
+const { dark = false } = Astro.props;
+---
+<header class:list={['absolute left-0 top-0 z-20 w-full px-6 py-6 lg:px-14', { 'text-white': dark, 'text-refuge-950': !dark }]}>
+  <div class="mx-auto flex max-w-7xl items-center justify-between">
+    <a href="/" class="flex items-center gap-2 text-lg font-black tracking-tight">
+      <span class="grid h-9 w-9 place-items-center rounded-full bg-sun-500 text-sm text-refuge-950">♥</span>
+      <span>Angelitos de Edgar</span>
+    </a>
+    <nav class="hidden items-center gap-7 text-sm font-bold md:flex">
+      <a href="/" class="opacity-80 transition hover:opacity-100">Inicio</a>
+      <a href="/animals" class="opacity-80 transition hover:opacity-100">Animales</a>
+      <a href="/login" data-auth-link class="opacity-80 transition hover:opacity-100">Administración</a>
+      <button data-logout class="hidden rounded-full bg-sun-500 px-4 py-2 text-refuge-950">Cerrar sesión</button>
+    </nav>
+    <button data-menu class="rounded-full p-2 md:hidden" aria-label="Abrir menú">☰</button>
+  </div>
+</header>
+<script>
+  import { logout } from '../../lib/auth';
+  const authLink = document.querySelector('[data-auth-link]');
+  const logoutButton = document.querySelector<HTMLButtonElement>('[data-logout]');
+  if (authLink && localStorage.getItem('auth_token')) {
+    authLink.textContent = 'Panel';
+    logoutButton?.classList.remove('hidden');
+  }
+  logoutButton?.addEventListener('click', async () => {
+    await logout();
+    window.location.href = '/login';
+  });
+</script>
+
+
